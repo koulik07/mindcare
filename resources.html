@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resources - MindCare</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page-container">
+        <!-- Header -->
+        <header class="page-header">
+            <button class="back-btn" onclick="history.back()">←</button>
+            <h1>Resources</h1>
+            <div></div>
+        </header>
+
+        <!-- Featured Video -->
+        <div class="featured-video">
+            <h2>Featured Content</h2>
+            <div class="video-card">
+                <div class="video-thumbnail">
+                    <div class="play-button">▶️</div>
+                    <img src="https://via.placeholder.com/300x200/4A90E2/FFFFFF?text=Mental+Health+Tips" alt="Featured Video">
+                </div>
+                <div class="video-info">
+                    <h3>Understanding Anxiety: 5 Coping Strategies</h3>
+                    <p>Learn effective techniques to manage anxiety and stress in your daily life.</p>
+                    <span class="video-duration">12:45</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Resource Categories -->
+        <div class="resource-categories">
+            <button class="category-btn active" data-filter="all">All</button>
+            <button class="category-btn" data-filter="articles">Articles</button>
+            <button class="category-btn" data-filter="videos">Videos</button>
+            <button class="category-btn" data-filter="guides">Guides</button>
+        </div>
+
+        <!-- Resource List -->
+        <div class="resource-list" id="resourceList">
+            <div id="forumPosts">
+                <!-- Dynamic posts will be inserted here -->
+            </div>
+            
+            <!-- Articles -->
+            <div class="resource-item" data-category="articles" data-type="article">
+                <div class="resource-icon">📖</div>
+                <div class="resource-content">
+                    <h3>Managing Stress During Exam Season</h3>
+                    <p>Practical tips to stay calm and focused during your most challenging academic periods.</p>
+                    <div class="resource-meta">
+                        <span class="resource-type">Article</span>
+                        <span class="read-time">5 min read</span>
+                    </div>
+                </div>
+                <button class="resource-action" onclick="openResource('article1')">Read</button>
+            </div>
+
+            <div class="resource-item" data-category="articles" data-type="article">
+                <div class="resource-icon">📖</div>
+                <div class="resource-content">
+                    <h3>Building Healthy Sleep Habits</h3>
+                    <p>Discover how proper sleep can improve your mental health and academic performance.</p>
+                    <div class="resource-meta">
+                        <span class="resource-type">Article</span>
+                        <span class="read-time">7 min read</span>
+                    </div>
+                </div>
+                <button class="resource-action" onclick="openResource('article2')">Read</button>
+            </div>
+
+            <!-- Videos -->
+            <div class="resource-item" data-category="videos" data-type="video">
+                <div class="resource-icon">🎥</div>
+                <div class="resource-content">
+                    <h3>Mindfulness Meditation for Students</h3>
+                    <p>A guided meditation session designed specifically for busy students.</p>
+                    <div class="resource-meta">
+                        <span class="resource-type">Video</span>
+                        <span class="read-time">15:30</span>
+                    </div>
+                </div>
+                <button class="resource-action" onclick="openResource('video1')">Watch</button>
+            </div>
+
+            <div class="resource-item" data-category="videos" data-type="video">
+                <div class="resource-icon">🎥</div>
+                <div class="resource-content">
+                    <h3>Breathing Exercises for Anxiety Relief</h3>
+                    <p>Simple breathing techniques you can use anywhere to reduce anxiety and stress.</p>
+                    <div class="resource-meta">
+                        <span class="resource-type">Video</span>
+                        <span class="read-time">8:45</span>
+                    </div>
+                </div>
+                <button class="resource-action" onclick="openResource('video2')">Watch</button>
+            </div>
+
+            <!-- Guides -->
+            <div class="resource-item" data-category="guides" data-type="guide">
+                <div class="resource-icon">📋</div>
+                <div class="resource-content">
+                    <h3>Complete Guide to Time Management</h3>
+                    <p>Master your schedule and reduce stress with proven time management strategies.</p>
+                    <div class="resource-meta">
+                        <span class="resource-type">Guide</span>
+                        <span class="read-time">20 min read</span>
+                    </div>
+                </div>
+                <button class="resource-action" onclick="openResource('guide1')">Download</button>
+            </div>
+
+            <div class="resource-item" data-category="guides" data-type="guide">
+                <div class="resource-icon">📋</div>
+                <div class="resource-content">
+                    <h3>Social Anxiety Toolkit</h3>
+                    <p>Comprehensive strategies and exercises to overcome social anxiety in college.</p>
+                    <div class="resource-meta">
+                        <span class="resource-type">Guide</span>
+                        <span class="read-time">25 min read</span>
+                    </div>
+                </div>
+                <button class="resource-action" onclick="openResource('guide2')">Download</button>
+            </div>
+
+            <div class="resource-item" data-category="articles" data-type="article">
+                <div class="resource-icon">📖</div>
+                <div class="resource-content">
+                    <h3>Dealing with Homesickness</h3>
+                    <p>Strategies to cope with being away from home and building new connections.</p>
+                    <div class="resource-meta">
+                        <span class="resource-type">Article</span>
+                        <span class="read-time">6 min read</span>
+                    </div>
+                </div>
+                <button class="resource-action" onclick="openResource('article3')">Read</button>
+            </div>
+
+            <div class="resource-item" data-category="videos" data-type="video">
+                <div class="resource-icon">🎥</div>
+                <div class="resource-content">
+                    <h3>Building Confidence and Self-Esteem</h3>
+                    <p>Practical exercises to boost your confidence and develop a positive self-image.</p>
+                    <div class="resource-meta">
+                        <span class="resource-type">Video</span>
+                        <span class="read-time">18:20</span>
+                    </div>
+                </div>
+                <button class="resource-action" onclick="openResource('video3')">Watch</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="dashboard.html" class="nav-item">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-label">Home</span>
+        </a>
+        <a href="appointments.html" class="nav-item">
+            <span class="nav-icon">📅</span>
+            <span class="nav-label">Appointments</span>
+        </a>
+        <a href="resources.html" class="nav-item active">
+            <span class="nav-icon">📚</span>
+            <span class="nav-label">Resources</span>
+        </a>
+        <a href="profile.html" class="nav-item">
+            <span class="nav-icon">👤</span>
+            <span class="nav-label">Profile</span>
+        </a>
+    </nav>
+
+    <script src="resources.js"></script>
+</body>
+</html>

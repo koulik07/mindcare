@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - MindCare</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="greeting">
+                <h1 id="greetingMessage">Good Morning, Student!</h1>
+                <p id="currentDate"></p>
+            </div>
+            <div class="profile-icon">
+                <span>👤</span>
+            </div>
+        </header>
+
+        <!-- Daily Inspiration Card -->
+        <div class="inspiration-card">
+            <h3>Daily Inspiration</h3>
+            <p id="inspirationText">"Every day is a new opportunity to grow and learn. You've got this! 💪"</p>
+            <div class="emoji-reactions">
+                <button class="emoji-btn" data-emoji="😊">😊</button>
+                <button class="emoji-btn" data-emoji="💪">💪</button>
+                <button class="emoji-btn" data-emoji="❤️">❤️</button>
+                <button class="emoji-btn" data-emoji="🌟">🌟</button>
+                <button class="emoji-btn" data-emoji="🙏">🙏</button>
+            </div>
+        </div>
+
+        <!-- Quick Actions Grid -->
+        <div class="quick-actions">
+            <h3>Quick Actions</h3>
+            <div class="actions-grid">
+                <div class="action-card" onclick="navigateTo('appointments.html')">
+                    <div class="action-icon">📅</div>
+                    <h4>Book Appointment</h4>
+                    <p>Schedule with a counselor</p>
+                </div>
+                <div class="action-card" onclick="navigateTo('forum.html')">
+                    <div class="action-icon">👥</div>
+                    <h4>Join Support Group</h4>
+                    <p>Connect with peers</p>
+                </div>
+                <div class="action-card" onclick="navigateTo('resources.html')">
+                    <div class="action-icon">📚</div>
+                    <h4>Resources</h4>
+                    <p>Articles and guides</p>
+                </div>
+                <div class="action-card" onclick="navigateTo('chat.html')">
+                    <div class="action-icon">💬</div>
+                    <h4>Chat Support</h4>
+                    <p>AI assistance 24/7</p>
+                </div>
+                <div class="action-card" onclick="navigateTo('wellness-dashboard.html')">
+                    <div class="action-icon">📊</div>
+                    <h4>Wellness Dashboard</h4>
+                    <p>View your progress & stats</p>
+                </div>
+                <div class="action-card crisis-action" onclick="navigateTo('crisis-support.html')">
+                    <div class="action-icon">🚨</div>
+                    <h4>Crisis Support</h4>
+                    <p>Emergency help & resources</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Activity -->
+        <div class="recent-activity">
+            <h3>Recent Activity</h3>
+            <div class="activity-list">
+                <div class="activity-item">
+                    <span class="activity-icon">📅</span>
+                    <div class="activity-content">
+                        <p>Upcoming appointment with Dr. Smith</p>
+                        <small>Tomorrow at 2:00 PM</small>
+                    </div>
+                </div>
+                <div class="activity-item">
+                    <span class="activity-icon">📖</span>
+                    <div class="activity-content">
+                        <p>Read "Managing Stress During Exams"</p>
+                        <small>2 days ago</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="dashboard.html" class="nav-item active">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-label">Home</span>
+        </a>
+        <a href="appointments.html" class="nav-item">
+            <span class="nav-icon">📅</span>
+            <span class="nav-label">Appointments</span>
+        </a>
+        <a href="resources.html" class="nav-item">
+            <span class="nav-icon">📚</span>
+            <span class="nav-label">Resources</span>
+        </a>
+        <a href="wellness-dashboard.html" class="nav-item">
+            <span class="nav-icon">📊</span>
+            <span class="nav-label">Wellness Dashboard</span>
+        </a>
+        <a href="crisis-support.html" class="nav-item">
+            <span class="nav-icon">🚨</span>
+            <span class="nav-label">Crisis</span>
+        </a>
+        <a href="profile.html" class="nav-item">
+            <span class="nav-icon">👤</span>
+            <span class="nav-label">Profile</span>
+        </a>
+    </nav>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>

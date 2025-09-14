@@ -1,0 +1,137 @@
+{
+  "name": "MindCare - Student Mental Health Support",
+  "short_name": "MindCare",
+  "description": "Comprehensive mental health support platform for students with crisis support, mood tracking, and wellness tools",
+  "start_url": "/dashboard.html",
+  "display": "standalone",
+  "background_color": "#667eea",
+  "theme_color": "#667eea",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en-US",
+  "categories": ["health", "medical", "wellness", "lifestyle"],
+  "screenshots": [
+    {
+      "src": "assets/screenshot-wide.png",
+      "sizes": "1280x720",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "MindCare Dashboard"
+    },
+    {
+      "src": "assets/screenshot-narrow.png",
+      "sizes": "750x1334",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "MindCare Mobile View"
+    }
+  ],
+  "icons": [
+    {
+      "src": "assets/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Crisis Support",
+      "short_name": "Crisis",
+      "description": "Access emergency contacts and crisis support tools",
+      "url": "/crisis-support.html",
+      "icons": [
+        {
+          "src": "assets/crisis-icon.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Mood Tracker",
+      "short_name": "Mood",
+      "description": "Track your daily mood and emotions",
+      "url": "/mood-tracker.html",
+      "icons": [
+        {
+          "src": "assets/mood-icon.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Breathing Exercises",
+      "short_name": "Breathe",
+      "description": "Guided breathing exercises for relaxation",
+      "url": "/breathing-exercises.html",
+      "icons": [
+        {
+          "src": "assets/breath-icon.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Emergency Call",
+      "short_name": "Emergency",
+      "description": "Quick access to emergency contacts",
+      "url": "/crisis-support.html?emergency=true",
+      "icons": [
+        {
+          "src": "assets/emergency-icon.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  }
+}

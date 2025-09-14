@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Breathing Exercises - MindCare</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page-container">
+        <!-- Header -->
+        <header class="page-header">
+            <button class="back-btn" onclick="history.back()">←</button>
+            <h1>Breathing Exercises</h1>
+            <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+        </header>
+
+        <!-- Exercise Selection -->
+        <div class="exercise-selection-card">
+            <h2>Choose Your Breathing Technique</h2>
+            <p>Select an exercise to reduce stress and anxiety</p>
+            
+            <div class="exercise-options">
+                <div class="exercise-card" onclick="startExercise('box')">
+                    <div class="exercise-icon">📦</div>
+                    <h3>Box Breathing</h3>
+                    <p>4-4-4-4 pattern • Great for focus</p>
+                    <span class="duration">4 minutes</span>
+                </div>
+                
+                <div class="exercise-card" onclick="startExercise('478')">
+                    <div class="exercise-icon">🌊</div>
+                    <h3>4-7-8 Technique</h3>
+                    <p>Inhale 4, Hold 7, Exhale 8 • For relaxation</p>
+                    <span class="duration">3 minutes</span>
+                </div>
+                
+                <div class="exercise-card" onclick="startExercise('equal')">
+                    <div class="exercise-icon">⚖️</div>
+                    <h3>Equal Breathing</h3>
+                    <p>Same inhale and exhale • Calming</p>
+                    <span class="duration">5 minutes</span>
+                </div>
+                
+                <div class="exercise-card" onclick="startExercise('triangle')">
+                    <div class="exercise-icon">🔺</div>
+                    <h3>Triangle Breathing</h3>
+                    <p>3-3-3 pattern • Quick stress relief</p>
+                    <span class="duration">2 minutes</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Breathing Exercise Interface -->
+        <div class="breathing-interface" id="breathingInterface" style="display: none;">
+            <div class="exercise-header">
+                <h2 id="exerciseTitle">Box Breathing</h2>
+                <button class="stop-btn" onclick="stopExercise()">Stop</button>
+            </div>
+            
+            <div class="breathing-circle-container">
+                <div class="breathing-circle" id="breathingCircle">
+                    <div class="inner-circle">
+                        <span class="breath-instruction" id="breathInstruction">Get Ready</span>
+                        <span class="breath-count" id="breathCount">3</span>
+                    </div>
+                </div>
+                <div class="breathing-guide" id="breathingGuide">
+                    <span class="guide-text">Prepare to breathe</span>
+                </div>
+            </div>
+            
+            <div class="exercise-controls">
+                <div class="progress-container">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                    <span class="time-remaining" id="timeRemaining">4:00</span>
+                </div>
+                
+                <div class="control-buttons">
+                    <button class="control-btn" id="pauseBtn" onclick="togglePause()">⏸️ Pause</button>
+                    <button class="control-btn" onclick="resetExercise()">🔄 Reset</button>
+                </div>
+            </div>
+            
+            <div class="exercise-stats">
+                <div class="stat">
+                    <span class="stat-value" id="cyclesCompleted">0</span>
+                    <span class="stat-label">Cycles</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value" id="totalTime">0:00</span>
+                    <span class="stat-label">Time</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-value" id="streakDays">0</span>
+                    <span class="stat-label">Day Streak</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Completion Celebration -->
+        <div class="completion-modal" id="completionModal" style="display: none;">
+            <div class="completion-content">
+                <div class="celebration-emoji">🎉</div>
+                <h2>Well Done!</h2>
+                <p>You've completed your breathing exercise</p>
+                <div class="completion-stats">
+                    <div class="completion-stat">
+                        <span class="stat-number" id="finalCycles">0</span>
+                        <span class="stat-text">breathing cycles</span>
+                    </div>
+                    <div class="completion-stat">
+                        <span class="stat-number" id="finalDuration">0</span>
+                        <span class="stat-text">minutes of mindfulness</span>
+                    </div>
+                </div>
+                <div class="completion-actions">
+                    <button class="btn-primary" onclick="closeCompletion()">Continue</button>
+                    <button class="btn-secondary" onclick="shareProgress()">Share Progress</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Tips -->
+        <div class="tips-card">
+            <h3>💡 Breathing Tips</h3>
+            <ul>
+                <li>Find a comfortable, quiet space</li>
+                <li>Sit up straight or lie down</li>
+                <li>Focus only on your breathing</li>
+                <li>Don't worry if your mind wanders</li>
+                <li>Practice daily for best results</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="dashboard.html" class="nav-item">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-label">Home</span>
+        </a>
+        <a href="mood-tracker.html" class="nav-item">
+            <span class="nav-icon">😊</span>
+            <span class="nav-label">Mood</span>
+        </a>
+        <a href="breathing-exercises.html" class="nav-item active">
+            <span class="nav-icon">🫁</span>
+            <span class="nav-label">Breathe</span>
+        </a>
+        <a href="profile.html" class="nav-item">
+            <span class="nav-icon">👤</span>
+            <span class="nav-label">Profile</span>
+        </a>
+    </nav>
+
+    <script src="breathing-exercises.js"></script>
+    <script src="theme.js"></script>
+</body>
+</html>

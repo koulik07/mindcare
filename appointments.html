@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Appointments - MindCare</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page-container">
+        <!-- Header -->
+        <header class="page-header">
+            <button class="back-btn" onclick="history.back()">←</button>
+            <h1>Appointments</h1>
+            <div></div>
+        </header>
+
+        <!-- Book New Appointment -->
+        <div class="appointment-booking">
+            <h2>Book New Appointment</h2>
+            <form id="appointmentForm" class="booking-form">
+                <div class="form-group">
+                    <label for="counselor">Select Counselor</label>
+                    <select id="counselor" name="counselor" required>
+                        <option value="">Choose a counselor</option>
+                        <option value="dr-smith">Dr. Sarah Smith - Clinical Psychologist</option>
+                        <option value="dr-johnson">Dr. Mike Johnson - Counseling Psychologist</option>
+                        <option value="dr-williams">Dr. Emma Williams - Mental Health Counselor</option>
+                    </select>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="date">Date</label>
+                        <input type="date" id="date" name="date" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="time">Time</label>
+                        <select id="time" name="time" required>
+                            <option value="">Select time</option>
+                            <option value="09:00">9:00 AM</option>
+                            <option value="10:00">10:00 AM</option>
+                            <option value="11:00">11:00 AM</option>
+                            <option value="14:00">2:00 PM</option>
+                            <option value="15:00">3:00 PM</option>
+                            <option value="16:00">4:00 PM</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="sessionType">Session Type</label>
+                    <select id="sessionType" name="sessionType" required>
+                        <option value="">Choose session type</option>
+                        <option value="individual">Individual Counseling</option>
+                        <option value="group">Group Therapy</option>
+                        <option value="crisis">Crisis Intervention</option>
+                        <option value="academic">Academic Stress Support</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="notes">Additional Notes (Optional)</label>
+                    <textarea id="notes" name="notes" rows="3" placeholder="Any specific concerns or topics you'd like to discuss..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-primary">Book Appointment</button>
+            </form>
+        </div>
+
+        <!-- Appointment Tabs -->
+        <div class="appointment-tabs">
+            <button class="tab-btn active" onclick="showTab('upcoming')">Upcoming</button>
+            <button class="tab-btn" onclick="showTab('completed')">Completed</button>
+            <button class="tab-btn" onclick="showTab('cancelled')">Cancelled</button>
+        </div>
+
+        <!-- Appointment Lists -->
+        <div id="upcoming" class="appointment-list active">
+            <div class="appointment-card">
+                <div class="appointment-info">
+                    <h3>Dr. Sarah Smith</h3>
+                    <p>Individual Counseling</p>
+                    <div class="appointment-details">
+                        <span>📅 Tomorrow, Dec 16</span>
+                        <span>🕐 2:00 PM</span>
+                    </div>
+                </div>
+                <div class="appointment-actions">
+                    <button class="btn-secondary" onclick="rescheduleAppointment(1)">Reschedule</button>
+                    <button class="btn-danger" onclick="cancelAppointment(1)">Cancel</button>
+                </div>
+            </div>
+
+            <div class="appointment-card">
+                <div class="appointment-info">
+                    <h3>Dr. Mike Johnson</h3>
+                    <p>Academic Stress Support</p>
+                    <div class="appointment-details">
+                        <span>📅 Dec 20, 2024</span>
+                        <span>🕐 10:00 AM</span>
+                    </div>
+                </div>
+                <div class="appointment-actions">
+                    <button class="btn-secondary" onclick="rescheduleAppointment(2)">Reschedule</button>
+                    <button class="btn-danger" onclick="cancelAppointment(2)">Cancel</button>
+                </div>
+            </div>
+        </div>
+
+        <div id="completed" class="appointment-list">
+            <div class="appointment-card completed">
+                <div class="appointment-info">
+                    <h3>Dr. Emma Williams</h3>
+                    <p>Individual Counseling</p>
+                    <div class="appointment-details">
+                        <span>📅 Dec 10, 2024</span>
+                        <span>🕐 3:00 PM</span>
+                    </div>
+                </div>
+                <div class="appointment-status">
+                    <span class="status-badge completed">Completed</span>
+                </div>
+            </div>
+        </div>
+
+        <div id="cancelled" class="appointment-list">
+            <div class="appointment-card cancelled">
+                <div class="appointment-info">
+                    <h3>Dr. Sarah Smith</h3>
+                    <p>Group Therapy</p>
+                    <div class="appointment-details">
+                        <span>📅 Dec 8, 2024</span>
+                        <span>🕐 11:00 AM</span>
+                    </div>
+                </div>
+                <div class="appointment-status">
+                    <span class="status-badge cancelled">Cancelled</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="dashboard.html" class="nav-item">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-label">Home</span>
+        </a>
+        <a href="appointments.html" class="nav-item active">
+            <span class="nav-icon">📅</span>
+            <span class="nav-label">Appointments</span>
+        </a>
+        <a href="resources.html" class="nav-item">
+            <span class="nav-icon">📚</span>
+            <span class="nav-label">Resources</span>
+        </a>
+        <a href="profile.html" class="nav-item">
+            <span class="nav-icon">👤</span>
+            <span class="nav-label">Profile</span>
+        </a>
+    </nav>
+
+    <script src="appointments.js"></script>
+</body>
+</html>

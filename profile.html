@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - MindCare</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page-container">
+        <!-- Header -->
+        <header class="page-header">
+            <button class="back-btn" onclick="history.back()">←</button>
+            <h1>Profile</h1>
+            <div></div>
+        </header>
+
+        <!-- Profile Info -->
+        <div class="profile-section">
+            <div class="profile-avatar">
+                <span class="avatar-large">👤</span>
+                <button class="edit-avatar-btn">📷</button>
+            </div>
+            <div class="profile-info">
+                <h2 id="userName">Student Name</h2>
+                <p id="userEmail">student@college.edu</p>
+                <p class="join-date">Member since December 2024</p>
+            </div>
+        </div>
+
+        <!-- Quick Stats -->
+        <div class="stats-section">
+            <div class="stat-card">
+                <h3>5</h3>
+                <p>Appointments</p>
+            </div>
+            <div class="stat-card">
+                <h3>12</h3>
+                <p>Resources Read</p>
+            </div>
+            <div class="stat-card">
+                <h3>8</h3>
+                <p>Forum Posts</p>
+            </div>
+        </div>
+
+        <!-- Settings Menu -->
+        <div class="settings-menu">
+            <div class="setting-item" onclick="editProfile()">
+                <span class="setting-icon">✏️</span>
+                <div class="setting-content">
+                    <h3>Edit Profile</h3>
+                    <p>Update your personal information</p>
+                </div>
+                <span class="setting-arrow">›</span>
+            </div>
+
+            <div class="setting-item" onclick="notificationSettings()">
+                <span class="setting-icon">🔔</span>
+                <div class="setting-content">
+                    <h3>Notifications</h3>
+                    <p>Manage your notification preferences</p>
+                </div>
+                <span class="setting-arrow">›</span>
+            </div>
+
+            <div class="setting-item" onclick="privacySettings()">
+                <span class="setting-icon">🔒</span>
+                <div class="setting-content">
+                    <h3>Privacy & Security</h3>
+                    <p>Control your privacy settings</p>
+                </div>
+                <span class="setting-arrow">›</span>
+            </div>
+
+            <div class="setting-item" onclick="helpSupport()">
+                <span class="setting-icon">❓</span>
+                <div class="setting-content">
+                    <h3>Help & Support</h3>
+                    <p>Get help and contact support</p>
+                </div>
+                <span class="setting-arrow">›</span>
+            </div>
+
+            <div class="setting-item" onclick="aboutApp()">
+                <span class="setting-icon">ℹ️</span>
+                <div class="setting-content">
+                    <h3>About MindCare</h3>
+                    <p>App information and version</p>
+                </div>
+                <span class="setting-arrow">›</span>
+            </div>
+
+            <div class="setting-item danger" onclick="logout()">
+                <span class="setting-icon">🚪</span>
+                <div class="setting-content">
+                    <h3>Logout</h3>
+                    <p>Sign out of your account</p>
+                </div>
+                <span class="setting-arrow">›</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="dashboard.html" class="nav-item">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-label">Home</span>
+        </a>
+        <a href="appointments.html" class="nav-item">
+            <span class="nav-icon">📅</span>
+            <span class="nav-label">Appointments</span>
+        </a>
+        <a href="resources.html" class="nav-item">
+            <span class="nav-icon">📚</span>
+            <span class="nav-label">Resources</span>
+        </a>
+        <a href="profile.html" class="nav-item active">
+            <span class="nav-icon">👤</span>
+            <span class="nav-label">Profile</span>
+        </a>
+    </nav>
+
+    <script src="profile.js"></script>
+    <script src="auth.js"></script>
+</body>
+</html>

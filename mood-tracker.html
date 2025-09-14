@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Tracker - MindCare</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page-container">
+        <!-- Header -->
+        <header class="page-header">
+            <button class="back-btn" onclick="history.back()">←</button>
+            <h1>Mood Tracker</h1>
+            <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+        </header>
+
+        <!-- Today's Mood Check-in -->
+        <div class="mood-checkin-card">
+            <h2>How are you feeling today?</h2>
+            <p class="checkin-date" id="todayDate"></p>
+            
+            <div class="mood-selector">
+                <div class="mood-option" data-mood="1" data-label="Terrible">
+                    <span class="mood-emoji">😢</span>
+                    <span class="mood-label">Terrible</span>
+                </div>
+                <div class="mood-option" data-mood="2" data-label="Bad">
+                    <span class="mood-emoji">😞</span>
+                    <span class="mood-label">Bad</span>
+                </div>
+                <div class="mood-option" data-mood="3" data-label="Okay">
+                    <span class="mood-emoji">😐</span>
+                    <span class="mood-label">Okay</span>
+                </div>
+                <div class="mood-option" data-mood="4" data-label="Good">
+                    <span class="mood-emoji">😊</span>
+                    <span class="mood-label">Good</span>
+                </div>
+                <div class="mood-option" data-mood="5" data-label="Great">
+                    <span class="mood-emoji">😄</span>
+                    <span class="mood-label">Great</span>
+                </div>
+            </div>
+
+            <div class="mood-note-section" id="moodNoteSection" style="display: none;">
+                <label for="moodNote">What's affecting your mood today? (Optional)</label>
+                <textarea id="moodNote" placeholder="Share what's on your mind..."></textarea>
+                <div class="mood-tags">
+                    <span class="tag" data-tag="stress">Stress</span>
+                    <span class="tag" data-tag="sleep">Sleep</span>
+                    <span class="tag" data-tag="work">Work/Study</span>
+                    <span class="tag" data-tag="social">Social</span>
+                    <span class="tag" data-tag="health">Health</span>
+                    <span class="tag" data-tag="family">Family</span>
+                </div>
+                <button class="btn-primary" onclick="saveMoodEntry()">Save Mood Entry</button>
+            </div>
+        </div>
+
+        <!-- Mood Chart -->
+        <div class="mood-chart-card">
+            <h3>Your Mood Trends</h3>
+            <div class="chart-period-selector">
+                <button class="period-btn active" data-period="7">7 Days</button>
+                <button class="period-btn" data-period="30">30 Days</button>
+                <button class="period-btn" data-period="90">3 Months</button>
+            </div>
+            <div class="mood-chart" id="moodChart">
+                <canvas id="moodCanvas" width="300" height="150"></canvas>
+            </div>
+            <div class="mood-stats">
+                <div class="stat-item">
+                    <span class="stat-value" id="avgMood">0</span>
+                    <span class="stat-label">Average Mood</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" id="bestDay">-</span>
+                    <span class="stat-label">Best Day</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" id="streakDays">0</span>
+                    <span class="stat-label">Good Days Streak</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Recent Entries -->
+        <div class="recent-entries-card">
+            <h3>Recent Entries</h3>
+            <div class="entries-list" id="entriesList">
+                <!-- Entries will be populated by JavaScript -->
+            </div>
+        </div>
+
+        <!-- Mood Insights -->
+        <div class="mood-insights-card">
+            <h3>💡 Insights & Tips</h3>
+            <div class="insight-content" id="insightContent">
+                <p>Track your mood daily to identify patterns and triggers. This helps you understand what affects your mental well-being.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="dashboard.html" class="nav-item">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-label">Home</span>
+        </a>
+        <a href="appointments.html" class="nav-item">
+            <span class="nav-icon">📅</span>
+            <span class="nav-label">Appointments</span>
+        </a>
+        <a href="mood-tracker.html" class="nav-item active">
+            <span class="nav-icon">😊</span>
+            <span class="nav-label">Mood</span>
+        </a>
+        <a href="profile.html" class="nav-item">
+            <span class="nav-icon">👤</span>
+            <span class="nav-label">Profile</span>
+        </a>
+    </nav>
+
+    <script src="mood-tracker.js"></script>
+    <script src="theme.js"></script>
+</body>
+</html>

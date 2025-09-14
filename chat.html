@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Support - MindCare</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="chat-container">
+        <!-- Header -->
+        <header class="chat-header">
+            <button class="back-btn" onclick="history.back()">←</button>
+            <div class="chat-info">
+                <h1>🤖 AI Support</h1>
+                <p class="online-status">Online • Always here to help</p>
+            </div>
+            <div></div>
+        </header>
+
+        <!-- Chat Messages -->
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot-message">
+                <div class="message-avatar">🤖</div>
+                <div class="message-content">
+                    <p>Hello! I'm your AI mental health support assistant. I'm here to listen and provide guidance 24/7. How are you feeling today?</p>
+                    <span class="message-time">Just now</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Quick Suggestions -->
+        <div class="quick-suggestions" id="quickSuggestions">
+            <button class="suggestion-btn" onclick="sendQuickMessage('I\'m feeling stressed about exams')">
+                😰 Feeling stressed about exams
+            </button>
+            <button class="suggestion-btn" onclick="sendQuickMessage('I need help with anxiety')">
+                😟 Need help with anxiety
+            </button>
+            <button class="suggestion-btn" onclick="sendQuickMessage('I\'m having trouble sleeping')">
+                😴 Having trouble sleeping
+            </button>
+            <button class="suggestion-btn" onclick="sendQuickMessage('I feel lonely')">
+                😔 Feeling lonely
+            </button>
+        </div>
+
+        <!-- Chat Input -->
+        <div class="chat-input-container">
+            <form id="chatForm" class="chat-input">
+                <input type="text" id="messageInput" placeholder="Type your message..." autocomplete="off">
+                <button type="submit" class="send-btn">
+                    <span>📤</span>
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="dashboard.html" class="nav-item">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-label">Home</span>
+        </a>
+        <a href="appointments.html" class="nav-item">
+            <span class="nav-icon">📅</span>
+            <span class="nav-label">Appointments</span>
+        </a>
+        <a href="resources.html" class="nav-item">
+            <span class="nav-icon">📚</span>
+            <span class="nav-label">Resources</span>
+        </a>
+        <a href="profile.html" class="nav-item">
+            <span class="nav-icon">👤</span>
+            <span class="nav-label">Profile</span>
+        </a>
+    </nav>
+
+    <script src="chat.js"></script>
+</body>
+</html>

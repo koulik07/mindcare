@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crisis Support - MindCare</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page-container">
+        <!-- Header -->
+        <header class="page-header">
+            <button class="back-btn" onclick="history.back()">←</button>
+            <h1>Crisis Support</h1>
+            <button class="theme-toggle" onclick="toggleTheme()">🌙</button>
+        </header>
+
+        <!-- Emergency Banner -->
+        <div class="emergency-banner">
+            <div class="emergency-icon">🚨</div>
+            <div class="emergency-text">
+                <h2>Need Immediate Help?</h2>
+                <p>If you're in crisis or having thoughts of self-harm, reach out now</p>
+            </div>
+        </div>
+
+        <!-- Quick Actions -->
+        <div class="crisis-quick-actions">
+            <button class="emergency-btn" onclick="callEmergency()">
+                <span class="btn-icon">📞</span>
+                <span class="btn-text">Call Emergency</span>
+                <span class="btn-number">911</span>
+            </button>
+            
+            <button class="crisis-btn" onclick="callCrisisLine()">
+                <span class="btn-icon">💬</span>
+                <span class="btn-text">Crisis Hotline</span>
+                <span class="btn-number">988</span>
+            </button>
+            
+            <button class="text-btn" onclick="textCrisis()">
+                <span class="btn-icon">💭</span>
+                <span class="btn-text">Text Support</span>
+                <span class="btn-number">Text HOME to 741741</span>
+            </button>
+        </div>
+
+        <!-- Immediate Coping Tools -->
+        <div class="coping-tools-card">
+            <h3>🛠️ Immediate Coping Tools</h3>
+            <div class="coping-grid">
+                <div class="coping-tool" onclick="start54321()">
+                    <div class="tool-icon">👁️</div>
+                    <h4>5-4-3-2-1 Grounding</h4>
+                    <p>Focus on your senses</p>
+                </div>
+                
+                <div class="coping-tool" onclick="startBreathing()">
+                    <div class="tool-icon">🫁</div>
+                    <h4>Emergency Breathing</h4>
+                    <p>Calm your nervous system</p>
+                </div>
+                
+                <div class="coping-tool" onclick="playCalming()">
+                    <div class="tool-icon">🎵</div>
+                    <h4>Calming Sounds</h4>
+                    <p>Soothing audio</p>
+                </div>
+                
+                <div class="coping-tool" onclick="showSafetyPlan()">
+                    <div class="tool-icon">📋</div>
+                    <h4>Safety Plan</h4>
+                    <p>Your personal plan</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Support Resources -->
+        <div class="support-resources-card">
+            <h3>📞 Support Resources</h3>
+            <div class="resource-list">
+                <div class="support-resource">
+                    <div class="resource-info">
+                        <h4>National Suicide Prevention Lifeline</h4>
+                        <p>24/7 confidential support</p>
+                    </div>
+                    <div class="resource-actions">
+                        <button class="call-btn" onclick="call('988')">Call 988</button>
+                        <button class="chat-btn" onclick="openChat('https://suicidepreventionlifeline.org/chat/')">Chat</button>
+                    </div>
+                </div>
+                
+                <div class="support-resource">
+                    <div class="resource-info">
+                        <h4>Crisis Text Line</h4>
+                        <p>Text-based crisis support</p>
+                    </div>
+                    <div class="resource-actions">
+                        <button class="text-btn-resource" onclick="textSupport('741741', 'HOME')">Text HOME to 741741</button>
+                    </div>
+                </div>
+                
+                <div class="support-resource">
+                    <div class="resource-info">
+                        <h4>SAMHSA National Helpline</h4>
+                        <p>Treatment referral service</p>
+                    </div>
+                    <div class="resource-actions">
+                        <button class="call-btn" onclick="call('1-800-662-4357')">Call Now</button>
+                    </div>
+                </div>
+                
+                <div class="support-resource">
+                    <div class="resource-info">
+                        <h4>Campus Counseling Center</h4>
+                        <p>Your college support services</p>
+                    </div>
+                    <div class="resource-actions">
+                        <button class="call-btn" onclick="callCampus()">Call Campus</button>
+                        <button class="location-btn" onclick="findCampusServices()">Find Location</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Safety Planning -->
+        <div class="safety-plan-card">
+            <h3>🛡️ Create Your Safety Plan</h3>
+            <p>A personalized plan to keep you safe during difficult times</p>
+            <div class="safety-plan-steps">
+                <div class="plan-step">
+                    <span class="step-number">1</span>
+                    <span class="step-text">Warning signs I need to watch for</span>
+                    <button class="step-btn" onclick="editSafetyPlan('warnings')">Edit</button>
+                </div>
+                <div class="plan-step">
+                    <span class="step-number">2</span>
+                    <span class="step-text">Coping strategies I can use</span>
+                    <button class="step-btn" onclick="editSafetyPlan('coping')">Edit</button>
+                </div>
+                <div class="plan-step">
+                    <span class="step-number">3</span>
+                    <span class="step-text">People I can contact for support</span>
+                    <button class="step-btn" onclick="editSafetyPlan('contacts')">Edit</button>
+                </div>
+                <div class="plan-step">
+                    <span class="step-number">4</span>
+                    <span class="step-text">Professional contacts</span>
+                    <button class="step-btn" onclick="editSafetyPlan('professionals')">Edit</button>
+                </div>
+                <div class="plan-step">
+                    <span class="step-number">5</span>
+                    <span class="step-text">Making my environment safe</span>
+                    <button class="step-btn" onclick="editSafetyPlan('environment')">Edit</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Grounding Exercise Modal -->
+        <div class="grounding-modal" id="groundingModal" style="display: none;">
+            <div class="grounding-content">
+                <div class="grounding-header">
+                    <h2>5-4-3-2-1 Grounding Exercise</h2>
+                    <button class="close-btn" onclick="closeGrounding()">×</button>
+                </div>
+                <div class="grounding-step" id="groundingStep">
+                    <div class="step-instruction">
+                        <h3>Look around and name</h3>
+                        <div class="step-count">5 things you can see</div>
+                        <p>Take your time and really focus on each item</p>
+                    </div>
+                    <div class="step-progress">
+                        <div class="progress-dots">
+                            <span class="dot active"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                            <span class="dot"></span>
+                        </div>
+                    </div>
+                    <button class="next-step-btn" onclick="nextGroundingStep()">Next Step</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav">
+        <a href="dashboard.html" class="nav-item">
+            <span class="nav-icon">🏠</span>
+            <span class="nav-label">Home</span>
+        </a>
+        <a href="crisis-support.html" class="nav-item active">
+            <span class="nav-icon">🚨</span>
+            <span class="nav-label">Crisis</span>
+        </a>
+        <a href="breathing-exercises.html" class="nav-item">
+            <span class="nav-icon">🫁</span>
+            <span class="nav-label">Breathe</span>
+        </a>
+        <a href="profile.html" class="nav-item">
+            <span class="nav-icon">👤</span>
+            <span class="nav-label">Profile</span>
+        </a>
+    </nav>
+
+    <script src="crisis-support.js"></script>
+    <script src="theme.js"></script>
+</body>
+</html>

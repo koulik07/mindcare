@@ -1,0 +1,41 @@
+{
+  "name": "mindcare-pwa",
+  "version": "1.0.0",
+  "description": "MindCare - Student Mental Health Support Progressive Web Application",
+  "main": "index.html",
+  "scripts": {
+    "start": "serve -s . -l 3000",
+    "dev": "serve -s . -l 3000",
+    "build": "echo 'No build step required - static files ready for deployment'",
+    "deploy:netlify": "netlify deploy --prod --dir .",
+    "deploy:vercel": "vercel --prod",
+    "test": "echo 'Open http://localhost:3000 and run manual tests from README.md'"
+  },
+  "keywords": [
+    "mental-health",
+    "pwa",
+    "student-support",
+    "crisis-support",
+    "wellness",
+    "healthcare"
+  ],
+  "author": "MindCare Team",
+  "license": "MIT",
+  "devDependencies": {
+    "serve": "^14.2.1"
+  },
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yourusername/mindcare-pwa.git"
+  },
+  "homepage": "https://yourusername.github.io/mindcare-pwa",
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not dead",
+    "not ie 11"
+  ]
+}

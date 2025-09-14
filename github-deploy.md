@@ -5,7 +5,7 @@
 ### Step 1: Create GitHub Repository
 1. Go to [github.com](https://github.com) and sign in
 2. Click **"New repository"** (green button)
-3. Repository name: `mindcare-pwa` (or your preferred name)
+3. Repository name: `mindcare` (or your preferred name)
 4. Description: `MindCare - Student Mental Health Support PWA`
 5. Set to **Public** (required for free GitHub Pages)
 6. ✅ Check **"Add a README file"**
@@ -34,7 +34,7 @@ git init
 git add .
 git commit -m "Initial MindCare PWA deployment"
 git branch -M main
-git remote add origin https://github.com/YOUR-USERNAME/mindcare-pwa.git
+git remote add origin https://github.com/koulik07/mindcare.git
 git push -u origin main
 ```
 

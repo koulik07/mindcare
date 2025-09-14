@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # MindCare - Student Mental Health Support PWA
 
 MindCare is a comprehensive Progressive Web Application designed to provide mental health support for students. It features crisis support, wellness tracking, mood monitoring, breathing exercises, and a complete PWA experience with offline capabilities.
@@ -266,3 +267,7 @@ For technical issues or questions about the mental health features:
 ---
 
 **Important**: This application is designed to supplement, not replace, professional mental health care. Users experiencing mental health crises should contact emergency services or mental health professionals immediately.
+=======
+# mindcare
+MindCare - Student Mental Health Support PWA`
+>>>>>>> 7d67e35f17f58e07195cc0c288f9c0fa6fee56b5
